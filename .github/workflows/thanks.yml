@@ -21,9 +21,9 @@ jobs:
                     const repo = context.repo.repo;
 
                     // lookup issue info
-                    const issue = await github.rest.issue.get{{
+                    const issue = await github.rest.issue.get({
                         repo, owner, issue_number 
-                    }};
+                    });
                     console.log(`issue: ${issue}`);
 
                     // create comment thanking contributor
@@ -43,5 +43,5 @@ jobs:
                     // make comment id available to subsequent steps
                     return comment.data.id;
 
-            - run: echo 'comment id=${[ steps.issue_script.outputs.result ]}'
+            - run: echo 'comment id=${{ steps.issue_script.outputs.result }}'
 
