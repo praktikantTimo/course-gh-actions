@@ -21,13 +21,13 @@ jobs:
                     const repo = context.repo.repo;
 
                     // lookup issue info
-                    const issue = await github.rest.issue.get({
+                    const issue = await github.rest.issues.get({
                         repo, owner, issue_number 
                     });
                     console.log(`issue: ${issue}`);
 
                     // create comment thanking contributor
-                    const comment = await github.rest.issue.createComment({
+                    const comment = await github.rest.issues.createComment({
                         repo, owner, issue_number, 
                         body: "Thank you for your contribution!"
                     });
