@@ -3,20 +3,20 @@ name: upper-capture
 on:
     push:
         paths:
-            - ".github/workflows/
+          - ".github/workflows/
             upper-capture.yml"
-            - "upper/**"
+          - "upper/**"
     workflow_dispatch: # manual
 
 jobs:
     capture:
         runs-on: macos-latest
-        default:
+        defaults:
             run:
-                working_directory: upper
+                working-directory: upper
         steps:
             - uses: actions/checkout@v4
-            - uses: acounts/setup-go@v5
+            - uses: actions/setup-go@v5
               with:
                 go-version: 1.22
                 cache-dependency-path: ./upper/go.sum
