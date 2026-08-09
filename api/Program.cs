@@ -29,6 +29,7 @@ app.MapGet("/sensitive", (string? password) =>
 });
 
 int foo;
+int foo2;
 
 var consistentForecasts = Enumerable.Range(1, 5).Select(index =>
     new WeatherForecast
